@@ -17,8 +17,8 @@ class ArticlesController < ApplicationController
 
   # POST /articles
   def create
-    Article.create!(article_params)
-    redirect_to articles_path
+    @article = Article.create!(article_params)
+    redirect_to article_path(@article)
   end
 
   # GET articles/:id/edit
