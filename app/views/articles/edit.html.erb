@@ -1,4 +1,6 @@
 <h1>edit article</h1>
-
 <%= render "form", article: @article %>
-<p> <%= link_to "Show", article_path(@article) %> | <%= link_to "Back", articles_path %> </p>
+<p><%= link_to article_path(@article),
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+    <i class="fa-solid fa-trash-can"></i>
+  <% end %>| <%= link_to "Show Article", article_path(@article) %> | <%= link_to "Back to Home", articles_path %> </p>
