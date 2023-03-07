@@ -1,4 +1,5 @@
 class ArticlesController < ApplicationController
+  before_action :set_article, only: %i[show edit update destroy]
   # GET /articles
   def index
     @articles = Article.all
@@ -6,7 +7,7 @@ class ArticlesController < ApplicationController
 
   # GET /articles/:id
   def show
-    @article = Article.find(params[:id])
+    @article
   end
 
   # GET /articles/new
@@ -22,23 +23,25 @@ class ArticlesController < ApplicationController
 
   # GET articles/:id/edit
   def edit
-    @article = Article.find(params[:id])
+    @article
   end
 
   # PATCH articles/:id
   def update
-    article = Article.find(params[:id])
-    article.update!(article_params)
+    @article.update!(article_params)
     redirect_to article_path
   end
 
   def destroy
-    article = Article.find(params[:id])
-    article.destroy
+    @article.destroy
     redirect_to articles_path
   end
 
   private
+
+  def set_article
+    @article = Article.find(params[:id])
+  end
 
   def article_params
     params.require(:article).permit(
