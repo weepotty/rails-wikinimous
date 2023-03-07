@@ -13,3 +13,36 @@
  *= require_tree .
  *= require_self
  */
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+nav {
+  padding-left: 1rem;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Roboto Slab";
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+h2 {
+  color: #337ab7;
+  text-decoration: none;
+}
+
+a {
+  text-decoration: none;
+  color: #337ab7;
+}
+
+a:hover h2 {
+  text-decoration: underline;
+  color: #285a86;
+}
+.col-sm-offset-2 {
+  margin-left: 16.67%;
+}

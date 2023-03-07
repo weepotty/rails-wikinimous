@@ -1,14 +1,10 @@
-<h1>Welcome to the Articles page</h1>
-
-<p><%= link_to "Create an article", new_article_path %></p>
-
-
 <% @articles.each do |article| %>
-<%= link_to article_path(article) do %>
-  <h2><%= article.title %></h2>
-  <% end %>
-  <p><%= article.content %></p>
-
-<%= link_to "Delete", article_path(article),
+  <article>
+    <%= link_to article_path(article) do %>
+      <h2><%= article.title %></h2>
+    <% end %>
+    <p><%= article.content %></p>
+    <%= link_to "Delete", article_path(article),
   data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+  </article>
 <% end %>
