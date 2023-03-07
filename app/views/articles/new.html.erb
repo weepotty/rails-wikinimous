@@ -1,11 +1,8 @@
+
 <%= form_with model: @article do |f| %>
   <%= f.label :title %>
   <%= f.text_field :title %>
   <%= f.label :content %>
   <%= f.text_area :content %>
-  <%= f.label :rating %>
-  <%= f.number_field :rating %>
-  <%= f.submit "Update Article" %>
+  <%= f.submit "Create Article" %>
 <% end %>
-
-<p> <%= link_to "Show", article_path(@article) %> | <%= link_to "Back", articles_path %> </p>
