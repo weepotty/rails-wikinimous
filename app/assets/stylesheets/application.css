@@ -46,3 +46,7 @@ a:hover h2 {
 .col-sm-offset-2 {
   margin-left: 16.67%;
 }
+
+input[type="submit"] {
+  margin: 1rem 0;
+}
